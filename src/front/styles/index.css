@@ -1,3 +1,28 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
+.parent {
+    width: 80%; 
+    /* padding: 30px; */
+    overflow-x: scroll;             /*must have*/
+    background: #f5f5f5;
+    white-space: nowrap;            /*must have*/
+    /* border: 2px solid black; */
+    border-radius: 14px;
+    background: #e3e3e3;
+    /* box-shadow:  20px 20px 60px #c1c1c1, */
+                /* -20px -20px 60px #ffffff; */
+  } 
+  .card {
+    width: 200px; height: 100%;
+    margin-right: 30px;
+    padding: 25px;
+    /* background: #3b3b3b; */
+    box-sizing: border-box;         /*must have*/
+    display:inline-block; 
+  } 
+  .CSS{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
