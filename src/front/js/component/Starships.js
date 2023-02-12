@@ -10,7 +10,7 @@ import { Context } from "../store/appContext";
   }
   const {store,actions} = useContext(Context)
   useEffect(()=>{
-    actions.starships()
+    actions.getStarships()
   },[])
   // Components must return valid HTML.
   return (
@@ -28,6 +28,11 @@ import { Context } from "../store/appContext";
           {/* You can put JS inline by using curly braces */}
           {starships.name ? starships.name : "Default Title"}
         </h5>
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">manufacturer: {starships.manufacturer}</li>
+          <li className="list-group-item">passengers: {starships.passengers}</li>
+        </ul>
+
         <p className="card-text">
           {props.children}
         </p>

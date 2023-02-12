@@ -5,6 +5,7 @@ import "../../styles/home.css";
 import  People  from "../component/People.js";
 import  Planets  from "../component/Planets.js";
 import  Starships  from "../component/Starships.js";
+import  {Navbar}  from "../component/navbar.js";
 
 
 export const Home = () => {
@@ -17,6 +18,7 @@ export const Home = () => {
 			<h2>Planets</h2> 
 			<Planets/>
 			<Starships/>
+			<Navbar/>
 			
 		</div>
 	);

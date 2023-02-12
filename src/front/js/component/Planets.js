@@ -29,6 +29,11 @@ import { Context } from "../store/appContext";
           {/* You can put JS inline by using curly braces */}
           {planets.name ? planets.name : "Default Title"}
         </h5>
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">population: {planets.population}</li>
+          <li className="list-group-item">terrain: {planets.terrain}</li>
+        </ul>
+
         <p className="card-text">
           {props.children}
         </p>
