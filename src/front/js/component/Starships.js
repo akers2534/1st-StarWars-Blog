@@ -1,48 +1,62 @@
 import React from "react";
 import { useEffect, useContext } from "react";
+import { Link, useParams } from "react-router-dom";
+
 import { Context } from "../store/appContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 // React components are functions
 // Props are parameters or arguments
- const Starships = (props) => {
+const Starships = (props) => {
   const style = {
-    width: props.width ? props.width : "18rem"
-  }
-  const {store,actions} = useContext(Context)
-  useEffect(()=>{
-    actions.getStarships()
-  },[])
+    width: props.width ? props.width : "18rem",
+  };
+  const { store, actions } = useContext(Context);
+  useEffect(() => {
+    actions.getStarships();
+  }, []);
   // Components must return valid HTML.
   return (
     <div className="parent">
       {store.starships.map((starships, i) => {
         return (
           <div className="card" style={style} key={i}>
-      <img
-        src="https://placekitten.com/526"
-        className="card-img-top"
-        alt="..."
-        />
-      <div className="card-body">
-        <h5 className="card-title">
-          {/* You can put JS inline by using curly braces */}
-          {starships.name ? starships.name : "Default Title"}
-        </h5>
-        <ul className="list-group list-group-flush">
-          <li className="list-group-item">manufacturer: {starships.manufacturer}</li>
-          <li className="list-group-item">passengers: {starships.passengers}</li>
-        </ul>
+            <img
+              src="https://www.denofgeek.com/wp-content/uploads/2019/12/x-wing.jpg?w=1024"
+              className="card-img-top"
+              alt="..."
+            />
+            <div className="card-body">
+              <h5 className="card-title">
+                {/* You can put JS inline by using curly braces */}
+                {starships.name ? starships.name : "Default Title"}
+              </h5>
+              <ul className="list-group list-group-flush">
+                <li className="list-group-item">
+                  manufacturer: {starships.manufacturer}
+                </li>
+                <li className="list-group-item">
+                  passengers: {starships.passengers}
+                </li>
+              </ul>
 
-        <p className="card-text">
-          {props.children}
-        </p>
-        <a href="#" className="btn btn-primary">
-          {props.btnText ? props.btnText : "Learn More"}
-        </a>
-      </div>
-    </div>
-        )
+              <div className="row d-flex justify-content-between">
+                <button className="btn btn-outline-primary mt-3 col-6">
+                  <Link to={`/starship-details/${i}`}>Learn More!</Link>
+                </button>
+                <button
+                  onClick={() => actions.addFavorite(person.name)}
+                  className="btn btn-outline-warning float-end mt-3 col-4"
+                >
+                  <FontAwesomeIcon icon={faHeart} />
+                </button>
+              </div>
+            </div>
+          </div>
+        );
       })}
-    
     </div>
-  );}; export default Starships
+  );
+};
+export default Starships;

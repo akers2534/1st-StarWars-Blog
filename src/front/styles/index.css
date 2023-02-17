@@ -1,6 +1,9 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
+.red{
+  color: red;
+}
 .parent {
     width: 80%; 
     /* padding: 30px; */
