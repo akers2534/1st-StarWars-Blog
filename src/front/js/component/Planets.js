@@ -16,7 +16,7 @@ const Planets = (props) => {
   };
   const { store, actions } = useContext(Context);
   useEffect(() => {
-    actions.getPlanets();
+    actions.getPlanets()
   }, []);
   // Components must return valid HTML.
   return (

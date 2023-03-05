@@ -16,8 +16,10 @@ const People = (props) => {
   };
   const { store, actions } = useContext(Context);
   useEffect(() => {
-    actions.getPeople();
+   actions.getPeople()
   }, []);
+
+  
   // Components must return valid HTML.
   return (
     <div className="parent">

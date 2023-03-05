@@ -8,18 +8,18 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 // React components are functions
 // Props are parameters or arguments
-const Starships = (props) => {
+const vehicles = (props) => {
   const style = {
     width: props.width ? props.width : "18rem",
   };
   const { store, actions } = useContext(Context);
   useEffect(() => {
-    actions.getStarships();
+    actions.getVehicles()
   }, []);
   // Components must return valid HTML.
   return (
     <div className="parent">
-      {store.starships.map((starships, i) => {
+      {store.vehicles.map((vehicles, i) => {
         return (
           <div className="card" style={style} key={i}>
             <img
@@ -30,14 +30,14 @@ const Starships = (props) => {
             <div className="card-body">
               <h5 className="card-title">
                 {/* You can put JS inline by using curly braces */}
-                {starships.name ? starships.name : "Default Title"}
+                {vehicles.name ? vehicles.name : "Default Title"}
               </h5>
               <ul className="list-group list-group-flush">
                 <li className="list-group-item">
-                  manufacturer: {starships.manufacturer}
+                  manufacturer: {vehicles.manufacturer}
                 </li>
                 <li className="list-group-item">
-                  passengers: {starships.passengers}
+                  passengers: {vehicles.passengers}
                 </li>
               </ul>
 
@@ -59,4 +59,4 @@ const Starships = (props) => {
     </div>
   );
 };
-export default Starships;
+export default vehicles;
